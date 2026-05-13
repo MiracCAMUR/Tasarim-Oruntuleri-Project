@@ -1,8 +1,8 @@
 public class Main{
     public static void main(String[] args){
-        GameObject player=new GameObject("PLAYER", "Kahraman", 100, 20);
-        GameObject enemy=new GameObject("ENEMY", "Zombi", 50, 10);
-        GameObject item=new GameObject("ITEM", "Can İksiri", 0, 0);
+        GameObject player=GameObjectFactory.C_Player("Obi-Wan Kenobi",2000,170);
+        GameObject enemy=GameObjectFactory.C_ENEMY("The Rancor",2500,190);
+        GameObject item=GameObjectFactory.C_Item("Can iksiri");
 
         System.out.println(" OYUN BAŞLIYOR ");
         player.update();
