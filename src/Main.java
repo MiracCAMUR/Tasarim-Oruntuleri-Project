@@ -4,7 +4,9 @@ public class Main{
         GameObject enemy=GameObjectFactory.C_ENEMY("The Rancor",2500,190);
         GameObject item=GameObjectFactory.C_Item("Can iksiri");
 
+        player = new LightsaberDecorator(player);
         System.out.println(" OYUN BAŞLIYOR ");
+        
         player.update();
         enemy.update();
         item.update();
