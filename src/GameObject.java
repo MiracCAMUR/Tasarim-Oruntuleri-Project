@@ -23,9 +23,9 @@ public class GameObject{
     }
     public void attack(){
         if(type.equals("PLAYER")){
-            System.out.println(name +" kılıcıyla "+ damage +" hasar verdi!");
+            System.out.println(name +" ışın kılıcı ile "+ damage +" hasar verdi!");
         }else if(type.equals("ENEMY")){
-            System.out.println(name + " pençeleriyle "+ damage +" hasar verdi!");
+            System.out.println(name + " blaster ile "+ damage +" hasar verdi!");
         }else if(type.equals("ITEM")){
             System.out.println("Eşyalar saldıramaz!");
         }
