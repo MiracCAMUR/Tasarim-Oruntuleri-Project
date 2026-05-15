@@ -1,0 +1,31 @@
+name: Java CI Pipeline (Build Check)
+
+# Hangi durumlarda çalışsın?
+on:
+  push:
+    branches: [ "phase-3", "main" ]
+  pull_request:
+    branches: [ "phase-3", "main" ]
+
+jobs:
+  build:
+    # GitHub'ın bize vereceği sanal bilgisayar (Ubuntu)
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. Adım: Kodlarımızı sanal bilgisayara çek
+    - uses: actions/checkout@v4
+    
+    # 2. Adım: Java 17 kur (Senin projen hangi sürümse ona göre ayarlanabilir ama 17 standarttır)
+    - name: Set up JDK 17
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+        
+    # 3. Adım: Kodları derle (Build)
+    # Eğer kodda bir yazım hatası veya eksik dosya varsa burada hata verir ve "Kırmızı" yanar.
+    - name: Build with Javac
+      run: |
+        mkdir -p out
+        javac -d out src/*.java
